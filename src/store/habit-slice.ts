@@ -48,9 +48,15 @@ const habitSlice = createSlice({
                         habit.completedDates.push(action.payload.date)
                     }
                 }
-            } 
+        },
+        deleteHabit:(
+            state,
+            action:PayloadAction<{id:string}>
+        )=>{
+             state.habits = state.habits.filter((habit)=>habit.id !== action.payload.id)
+        },
     },
 })
 
-export const {addHabit,toggleHabit} = habitSlice.actions 
+export const {addHabit,toggleHabit,deleteHabit} = habitSlice.actions 
 export default habitSlice.reducer
