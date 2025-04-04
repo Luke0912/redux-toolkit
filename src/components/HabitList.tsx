@@ -38,7 +38,7 @@ export const HabitList = () => {
     >
       {habits.map((habit) => {
         return (
-          <Paper key={habit.id} elevation={2} sx={{ p: 2 }}>
+          <Paper key={habit._id} elevation={2} sx={{ p: 2 }}>
             <Grid container alignItems="center">
               <Grid size={{ xs: 12, sm: 6 }}>
                 <Typography variant="h6" sx={{ transform: "capitalize" }}>
@@ -60,7 +60,7 @@ export const HabitList = () => {
                         : "primary"
                     }
                     startIcon={<CheckCircleOutlineIcon/>}
-                    onClick={()=>dispatch(toggleHabit({id:habit.id,date:today}))}
+                    onClick={()=>dispatch(toggleHabit({_id:habit._id,date:today}))}
                   >
                    { habit.completedDates.includes(today) ? "Complted" : "Mark Complete"}
                   </Button>
@@ -68,7 +68,7 @@ export const HabitList = () => {
                     variant="outlined"
                     color="error"
                     startIcon={<DeleteIcon/>}
-                    onClick={()=>dispatch(deleteHabit({id:habit.id}))}
+                    onClick={()=>dispatch(deleteHabit({_id:habit._id}))}
                   >
                     Delete
                 </Button>
