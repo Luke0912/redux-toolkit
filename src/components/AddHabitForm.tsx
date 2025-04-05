@@ -4,7 +4,7 @@ import { Box, Button, FormControl, InputLabel, MenuItem, Select, TextField } fro
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from '../store/store'
-import { addHabit } from '../store/habit-slice'
+import { createHabit } from '../store/habit-slice'
 
 export const AddHabitForm = () => {
 
@@ -21,7 +21,7 @@ export const AddHabitForm = () => {
             return;
         }
         dispatch(
-            addHabit({
+            createHabit({
                 name,
                 frequency
             })
